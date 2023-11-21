@@ -4,19 +4,25 @@ import { ActivatedRoute, Router } from '@angular/router'
 
 import '@ui5/webcomponents-fiori/dist/ShellBar.js'
 
-import '@ui5/webcomponents-icons/dist/home.js'
-import '@ui5/webcomponents-icons/dist/list.js'
+import '@ui5/webcomponents-icons/dist/request.js'
+import '@ui5/webcomponents-icons/dist/activities.js'
+import '@ui5/webcomponents-icons/dist/calendar.js'
 
 const ROUTES = [
   {
     path: 'new',
-    icon: 'home',
-    text: 'Nuevo',
+    icon: 'request',
+    text: 'Nueva Tarea',
   },
   {
     path: 'list',
-    icon: 'list',
+    icon: 'activities',
     text: 'Listado',
+  },
+  {
+    path: 'calendar',
+    icon: 'calendar',
+    text: 'Calendario',
   },
 ]
 
