@@ -1,0 +1,9 @@
+<ui5-side-navigation>
+  <ui5-side-navigation-item
+    *ngFor="let r of ROUTES"
+    [text]="r.text"
+    [icon]="r.icon"
+    [selected]="selectedMenuItem === r.path"
+    [routerLink]="r.path">
+  </ui5-side-navigation-item>
+</ui5-side-navigation>
