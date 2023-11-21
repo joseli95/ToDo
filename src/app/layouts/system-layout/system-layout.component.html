@@ -1,0 +1,16 @@
+<div class="tool-layout">
+  <ui5-shellbar id="shellbar-1">
+    <img
+      slot="logo"
+      alt="Logo"
+      src="./assets/images/logo.png"
+      style="width: 120px" />
+
+    <ui5-button icon="menu" slot="startButton" id="toggle"></ui5-button>
+  </ui5-shellbar>
+
+  <!--  <app-sidebar/>-->
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
