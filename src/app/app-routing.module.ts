@@ -5,7 +5,7 @@ import { SystemLayoutComponent } from './layouts/system-layout/system-layout.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'pages',
+    redirectTo: 'system/new',
     pathMatch: 'prefix',
   },
   {
