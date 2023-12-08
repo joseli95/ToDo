@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router'
 import { NewTaskComponent } from './new-task/new-task.component'
 import { TasksComponent } from './tasks/tasks.component'
+import { CalendarComponent } from './calendar/calendar.component'
 
 export const SystemRouting: Routes = [
   {
@@ -10,5 +11,9 @@ export const SystemRouting: Routes = [
   {
     path: 'tasks',
     component: TasksComponent,
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent,
   },
 ]

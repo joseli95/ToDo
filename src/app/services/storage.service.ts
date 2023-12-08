@@ -10,7 +10,6 @@ export class StorageService {
 
   saveTask(task: ITask) {
     const tasks = this.getTasks()
-
     tasks.push(task)
 
     localStorage.setItem('tasks', JSON.stringify(tasks))

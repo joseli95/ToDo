@@ -13,7 +13,9 @@
 
       <div class="form-controls">
         <ui5-label [required]="true">Fecha</ui5-label>
-        <ui5-date-picker formControlName="date"></ui5-date-picker>
+        <ui5-date-picker
+          format-pattern="dd/MM/yyyy"
+          formControlName="date"></ui5-date-picker>
       </div>
 
       <div class="form-controls">

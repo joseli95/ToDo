@@ -7,9 +7,11 @@ import { FormNewComponent } from '../../components/form-new/form-new.component'
 import { TasksListComponent } from '../../components/tasks-list/tasks-list.component'
 import { Ui5WebcomponentsModule } from '@ui5/webcomponents-ngx'
 import { ReactiveFormsModule } from '@angular/forms'
-import { CommonModule } from '@angular/common'
+import { CommonModule, CurrencyPipe } from '@angular/common'
 import { TasksComponent } from './tasks/tasks.component'
 import { StatusPipe } from '../../pipes/status.pipe'
+import { CalendarComponent } from './calendar/calendar.component'
+import { FullCalendarModule } from '@fullcalendar/angular'
 
 @NgModule({
   imports: [
@@ -17,6 +19,7 @@ import { StatusPipe } from '../../pipes/status.pipe'
     Ui5WebcomponentsModule,
     ReactiveFormsModule,
     CommonModule,
+    FullCalendarModule,
   ],
   declarations: [
     NewTaskComponent,
@@ -25,6 +28,8 @@ import { StatusPipe } from '../../pipes/status.pipe'
     TasksListComponent,
     TasksComponent,
     StatusPipe,
+    CalendarComponent,
   ],
+  providers: [CurrencyPipe],
 })
 export class SystemModule {}
