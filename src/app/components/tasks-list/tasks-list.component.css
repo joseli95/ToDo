@@ -1,0 +1,7 @@
+.table-tasks {
+  margin: 10px;
+}
+
+ui5-table ui5-table-column.table-header-text-alignment::part(column) {
+  text-align: end;
+}

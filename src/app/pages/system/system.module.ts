@@ -16,6 +16,11 @@ import { CommonModule } from '@angular/common'
     ReactiveFormsModule,
     CommonModule,
   ],
-  declarations: [NewTaskComponent, FormNewComponent, TasksListComponent],
+  declarations: [
+    NewTaskComponent,
+    FormNewComponent,
+    TasksListComponent,
+    TasksListComponent,
+  ],
 })
 export class SystemModule {}
