@@ -1,16 +1,20 @@
-import { Injectable } from '@angular/core'
+import { inject, Injectable } from '@angular/core'
 import { ITask } from '../interfaces/ITask'
+import { TaskService } from './task.service'
 
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
+  private taskService = inject(TaskService)
+
   saveTask(task: ITask) {
     const tasks = this.getTasks()
 
     tasks.push(task)
 
     localStorage.setItem('tasks', JSON.stringify(tasks))
+    this.taskService.taskAdded()
   }
 
   getTasks(): ITask[] {
