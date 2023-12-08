@@ -1,0 +1,9 @@
+.form-content {
+  margin: 10px;
+}
+
+.form-controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
