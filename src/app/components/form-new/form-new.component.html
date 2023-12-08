@@ -1,19 +1,32 @@
 <ui5-card>
   <ui5-card-header title-text="Nueva tarea"></ui5-card-header>
 
-  <div class="form-content">
-    <div class="form-controls">
-      <ui5-label>Tarea</ui5-label>
-      <ui5-input style="width: 100%" placeholder="Lavar los platos"></ui5-input>
-    </div>
+  <form [formGroup]="formNewTask" (ngSubmit)="saveTask()">
+    <div class="form-content">
+      <div class="form-controls">
+        <ui5-label [required]="true">Tarea</ui5-label>
+        <ui5-input
+          style="width: 100%"
+          formControlName="task"
+          placeholder="Lavar los platos"></ui5-input>
+      </div>
 
-    <div class="form-controls">
-      <ui5-label>Fecha</ui5-label>
-      <ui5-date-picker></ui5-date-picker>
-    </div>
+      <div class="form-controls">
+        <ui5-label [required]="true">Fecha</ui5-label>
+        <ui5-date-picker formControlName="date"></ui5-date-picker>
+      </div>
 
-    <div class="form-controls">
-      <ui5-button design="Emphasized">Guardar</ui5-button>
+      <div class="form-controls">
+        <ui5-button design="Emphasized" type="Submit">Guardar</ui5-button>
+      </div>
+
+      <ui5-message-strip
+        *ngIf="showErrorMessage"
+        design="Negative"
+        class="form-controls"
+        [hide-close-button]="true">
+        {{ errorMessage }}
+      </ui5-message-strip>
     </div>
-  </div>
+  </form>
 </ui5-card>
