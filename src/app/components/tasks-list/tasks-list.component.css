@@ -1,5 +1,5 @@
 .table-tasks {
-  margin: 10px;
+  margin: 5px;
 }
 
 ui5-table ui5-table-column.table-header-text-alignment::part(column) {

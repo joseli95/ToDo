@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core'
+import { Component, inject, Input, OnInit } from '@angular/core'
 import { StorageService } from '../../services/storage.service'
 
 import '@ui5/webcomponents/dist/Table.js'
@@ -16,6 +16,8 @@ import { TaskService } from '../../services/task.service'
   styleUrls: ['./tasks-list.component.css'],
 })
 export class TasksListComponent implements OnInit {
+  @Input() lastTask = true
+
   private storageService = inject(StorageService)
   private taskService = inject(TaskService)
 
@@ -34,8 +36,12 @@ export class TasksListComponent implements OnInit {
   getTasks() {
     const allTasks = this.storageService.getTasks()
 
-    this.tasks = allTasks.filter(tasks => !tasks.completed).slice(-5)
+    if (this.lastTask) {
+      this.tasks = allTasks.filter(tasks => !tasks.completed).slice(-5)
 
-    this.tasks.reverse()
+      this.tasks.reverse()
+    } else {
+      this.tasks = allTasks
+    }
   }
 }
