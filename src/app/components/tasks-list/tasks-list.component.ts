@@ -1,5 +1,7 @@
 import { Component, inject, Input, OnInit } from '@angular/core'
 import { StorageService } from '../../services/storage.service'
+import { ITask } from '../../interfaces/ITask'
+import { TaskService } from '../../services/task.service'
 
 import '@ui5/webcomponents/dist/Table.js'
 import '@ui5/webcomponents/dist/TableColumn.js'
@@ -7,8 +9,7 @@ import '@ui5/webcomponents/dist/TableRow.js'
 import '@ui5/webcomponents/dist/TableCell.js'
 import '@ui5/webcomponents/dist/Card.js'
 import '@ui5/webcomponents/dist/CardHeader.js'
-import { ITask } from '../../interfaces/ITask'
-import { TaskService } from '../../services/task.service'
+import '@ui5/webcomponents/dist/Switch.js'
 
 @Component({
   selector: 'app-tasks-list',
@@ -44,5 +45,10 @@ export class TasksListComponent implements OnInit {
     } else {
       this.tasks = allTasks
     }
+  }
+
+  markCompleted(id: number) {
+    console.log(id)
+    this.storageService.markAsCompleted(id)
   }
 }

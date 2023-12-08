@@ -17,6 +17,17 @@ export class StorageService {
     this.taskService.taskAdded()
   }
 
+  markAsCompleted(id: number) {
+    const tasks = this.getTasks()
+
+    const taskIndex = tasks.findIndex(task => task.id === id)
+    if (taskIndex !== -1) {
+      tasks[taskIndex].completed = true
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+      this.taskService.taskAdded()
+    }
+  }
+
   getTasks(): ITask[] {
     const tasksString = localStorage.getItem('tasks') || ''
     try {

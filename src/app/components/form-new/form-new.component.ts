@@ -33,6 +33,7 @@ export class FormNewComponent {
   saveTask() {
     if (this.formNewTask.valid) {
       const task: ITask = {
+        id: this.generateUniqueId(),
         task: this.formNewTask.controls.task.value ?? '',
         date: this.formNewTask.controls.date.value ?? '',
         completed: false,
@@ -49,5 +50,9 @@ export class FormNewComponent {
         this.showErrorMessage = false
       }, 3500)
     }
+  }
+
+  private generateUniqueId(): number {
+    return Date.now()
   }
 }
