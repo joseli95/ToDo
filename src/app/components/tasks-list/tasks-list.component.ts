@@ -17,6 +17,7 @@ import { TaskService } from '../../services/task.service'
 })
 export class TasksListComponent implements OnInit {
   @Input() lastTask = true
+  @Input() title = 'Últimas tareas agregadas'
 
   private storageService = inject(StorageService)
   private taskService = inject(TaskService)

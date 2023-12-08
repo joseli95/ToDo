@@ -8,6 +8,8 @@ import { TasksListComponent } from '../../components/tasks-list/tasks-list.compo
 import { Ui5WebcomponentsModule } from '@ui5/webcomponents-ngx'
 import { ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
+import { TasksComponent } from './tasks/tasks.component'
+import { StatusPipe } from '../../pipes/status.pipe'
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import { CommonModule } from '@angular/common'
     FormNewComponent,
     TasksListComponent,
     TasksListComponent,
+    TasksComponent,
+    StatusPipe,
   ],
 })
 export class SystemModule {}

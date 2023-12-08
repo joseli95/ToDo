@@ -15,7 +15,7 @@ const ROUTES = [
     text: 'Nueva Tarea',
   },
   {
-    path: 'list',
+    path: 'tasks',
     icon: 'activities',
     text: 'Listado',
   },
