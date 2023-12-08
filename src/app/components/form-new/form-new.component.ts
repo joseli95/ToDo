@@ -9,6 +9,8 @@ import '@ui5/webcomponents/dist/Card.js'
 import '@ui5/webcomponents/dist/CardHeader.js'
 import '@ui5/webcomponents/dist/DatePicker.js'
 import '@ui5/webcomponents/dist/MessageStrip.js'
+import { StorageService } from '../../services/storage.service'
+import { ITask } from '../../interfaces/ITask'
 
 @Component({
   selector: 'app-form-new',
@@ -17,6 +19,8 @@ import '@ui5/webcomponents/dist/MessageStrip.js'
 })
 export class FormNewComponent {
   private formBuilder = inject(FormBuilder)
+
+  private storageService = inject(StorageService)
 
   showErrorMessage = false
   errorMessage = ''
@@ -28,6 +32,15 @@ export class FormNewComponent {
 
   saveTask() {
     if (this.formNewTask.valid) {
+      const task: ITask = {
+        task: this.formNewTask.controls.task.value ?? '',
+        date: this.formNewTask.controls.date.value ?? '',
+        completed: false,
+      }
+
+      this.storageService.saveTask(task)
+      this.formNewTask.controls.task.setValue('')
+      this.formNewTask.controls.date.setValue('')
     } else {
       this.showErrorMessage = true
       this.errorMessage = 'Debes completar todos los campos'
